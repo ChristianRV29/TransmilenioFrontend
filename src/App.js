@@ -21,6 +21,8 @@ import EditRoute from './components/EditRoute';
 import RouteList from './components/RouteList';
 import AddStation from './components/AddStationToRoute';
 
+import PokemonApi from './components/PokemonApi';
+
 function App() {
   return (
     <Router>
@@ -39,6 +41,9 @@ function App() {
       <Route path="/listarRutas" component={RouteList} />
       <Route path="/editarRuta/:id" component={EditRoute}/> 
       <Route path="/agregarEstacion:/id" component={AddStation} />
+
+      <Route path="/api/pokemones" component={PokemonApi} />
+
     </Router>
   );
 }
