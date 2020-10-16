@@ -22,7 +22,7 @@ export default class StationList extends Component {
 
         this.setState({
             stations: resp.data
-        });        
+        });
     }
 
     deleteStation = async (id) => {
@@ -50,6 +50,7 @@ export default class StationList extends Component {
                                     <div className="card-body">
                                         <p>Dirección: {station.address}</p>
                                         <p>Zona: {station.zone.name}</p>
+                                        <p>Rutas: {station.routes}</p>
                                     </div>
                                     <div className="card-footer">
                                         <button className="btn btn-danger" onClick={() => this.deleteStation(station._id)}>

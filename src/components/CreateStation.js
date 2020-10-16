@@ -20,9 +20,9 @@ export default class CreateStation extends Component {
 
         this.setState({
             zones: resp.data,
-            zoneSelected: resp.data[0].name,
+            zoneSelected: resp.data[0]._id,
             routes: resp2.data,
-            routeSelected: resp2.data[0].name,
+            routeSelected: resp2.data[0]._id,
         });
 
     }
@@ -36,13 +36,18 @@ export default class CreateStation extends Component {
 
     onSubmit = async (e) => {
 
-        // e.preventDefault();
+        e.preventDefault();
 
         await axios.post('http://localhost:8080/api/estaciones/crearEstacion', {
             name: this.state.name,
             address: this.state.address,
-            zone: this.state.zoneSelected
+            zone: this.state.zoneSelected,
+            routes: {
+                _id: this.state.route,
+            }
         });
+
+        window.location.href = '/';
     }
 
     render() {
@@ -69,7 +74,7 @@ export default class CreateStation extends Component {
                                         placeholder="Dirección ruta"
                                         name="address"
                                         required
-                                        onChange={this.onInputChange} />
+                                        onChange={this.onInputChange} />   
                                 </div>
                                 <div className="form-group">
                                     <label>Zona a la que pertenece</label>
@@ -87,9 +92,9 @@ export default class CreateStation extends Component {
                                             ))
                                         }
                                     </select>
-                                </div>
+                                </div>                            
                                 <div className="form-group">
-                                    <label>Rutas que pasan por la estación</label>
+                                    <label>Ruta que pasa por la estación</label>
                                     <select
                                         className="form-control"
                                         value={this.state.routeSelected}
@@ -105,7 +110,6 @@ export default class CreateStation extends Component {
                                         }
                                     </select>
                                 </div>
-
                                 <button type="submit" className="btn btn-primary">
                                     Crear
                                 </button>

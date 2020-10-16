@@ -36,7 +36,7 @@ function App() {
       <Route path="/agregarRuta/:id" component={AddRoute} />
 
       <Route path="/crearRuta" component={CreateRoute} />
-      <Route path="/listarRuta" component={RouteList} />
+      <Route path="/listarRutas" component={RouteList} />
       <Route path="/editarRuta/:id" component={EditRoute}/> 
       <Route path="/agregarEstacion:/id" component={AddStation} />
     </Router>
