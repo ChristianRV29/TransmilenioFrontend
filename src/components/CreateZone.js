@@ -28,8 +28,10 @@ export default class CreateZone extends React.Component {
         }).catch((err) => {
             console.log(err);
         })
-    }
 
+        window.location.href = '/listarZonas';
+    }
+    
     
     render() {
         return (

@@ -26,12 +26,7 @@ export default class EditStation extends Component {
             return res.data;
         });
 
-        if (respuesta) {
-
-            this.setState({
-                redirect: "/listarEstaciones"
-            });
-        }
+        window.location.href = '/listarEstaciones';
     }
 
     render() {

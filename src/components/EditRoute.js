@@ -23,7 +23,9 @@ export default class EditRoute extends Component {
             name: this.state.name,            
         }).then((res) => {
             return res.data;
-        });       
+        });
+        
+        window.location.href = '/listarRutas';
     }
 
     render() {

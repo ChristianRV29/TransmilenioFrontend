@@ -30,14 +30,16 @@ export default class CreateRoute extends Component {
 
     onSubmit = async (e) => {
 
-        // e.preventDefault();
+        e.preventDefault();
 
         await axios.post('http://localhost:8080/api/rutas/crearRuta', {
             name: this.state.name,                        
             stations: {
-                _id: this.state.station,
+                _id: this.state.stationSelected,
             }
         });
+
+        window.location.href = '/listarRutas';
     }
 
     render() {

@@ -29,9 +29,7 @@ export default class EditZone extends Component {
             return null;
         });
 
-        if (respuesta) {
-
-        }
+        window.location.href = '/listarZonas';
     }
 
     render() {
