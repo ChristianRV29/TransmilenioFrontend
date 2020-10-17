@@ -43,7 +43,7 @@ export default class CreateStation extends Component {
             address: this.state.address,
             zone: this.state.zoneSelected,
             routes: {
-                _id: this.state.route,
+                _id: this.state.route,                
             }
         });
 

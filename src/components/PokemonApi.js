@@ -15,8 +15,11 @@ export default class PokemonApi extends Component {
 
     loadPokemons = async (namePokemon) => {
 
+        const cargaMasiva = await axios.get('https://pokeapi.co/api/v2/pokemon');
         const resp = await axios.get(`https://pokeapi.co/api/v2/pokemon/${namePokemon}`);    
-                
+            
+        console.log(`CARGA MASIVA: ${JSON.stringify(cargaMasiva)}`);
+        console.log(`LO QUE LLEGA COMO POKEMON COMPLETO: ${JSON.stringify(resp.data)}`);
 
         if (resp) {
 

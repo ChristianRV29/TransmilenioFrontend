@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default class RouteList extends Component {
 
@@ -11,7 +11,7 @@ export default class RouteList extends Component {
 
     }
 
-    async componentDidMount () {
+    async componentDidMount() {
 
         this.getRoutes();
     }
@@ -45,8 +45,11 @@ export default class RouteList extends Component {
                                             Editar ruta
                                     </Link>
                                     </div>
-                                    <div className="card-body">                                                                                
-                                        <p>Estaciones: {route.stations}</p>
+                                    <div className="card-body">
+                                        <p>Estaciones: {route.stations.map((station) => (
+                                            <h6>{station}</h6>
+                                        ))}
+                                        </p>
                                     </div>
                                     <div className="card-footer">
                                         <button className="btn btn-danger" onClick={() => this.deleteRoute(route._id)}>
